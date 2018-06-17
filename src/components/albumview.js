@@ -1,7 +1,7 @@
 import React from 'react'
 import FlexBox from 'flexbox-react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import {faShoppingCart, faCloudDownloadAlt} from '@fortawesome/fontawesome-free-solid/'
+import {faShoppingCart, faCloudDownloadAlt, faTimesCircle} from '@fortawesome/fontawesome-free-solid/'
 
 class AlbumView extends React.Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class AlbumView extends React.Component {
             })
         }
     }
-    closeModal() {
+    closeModal(e) {
         this.setState({
             show: false
         })
@@ -30,7 +30,7 @@ class AlbumView extends React.Component {
         this.closeModal = this.closeModal.bind(this)
         if (show) {
             return (
-                <div className="backdrop" onClick={this.closeModal}>
+                <div className="backdrop">
                     <FlexBox flexDirection="row" className="modal">
                         <FlexBox element="main" flexGrow={1} maxWidth="50vw">
                             <FlexBox className="album-description" flexDirection="column" justifyContent="flex-end">
@@ -42,6 +42,7 @@ class AlbumView extends React.Component {
                         </FlexBox>
                         <FlexBox flexGrow={1} maxWidth="60vw">
                             <iframe width="500" height="400" scrolling="no" frameborder="no" allow="autoplay" title={album.name} src={album.embed} className="embed"></iframe>
+                            <FontAwesomeIcon icon={faTimesCircle} onClick={this.closeModal} className="close"/>
                         </FlexBox>
                     </FlexBox>
                     <FlexBox element="footer" className="footer" justifyContent="center" onClick={null}>

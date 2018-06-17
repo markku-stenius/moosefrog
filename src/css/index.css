@@ -11,6 +11,7 @@ h1 {
 }
 .main {
     background-color: transparent;
+    margin: 10vw;
 }
 .logo {
     animation-name: fadeIn;
@@ -52,13 +53,19 @@ h1 {
     color: #ffffff;
     font-size: 64px;
 }
+.close {
+    color: #ffffff;
+    font-size: 32px;
+    cursor: pointer;
+    margin-left: 20px;
+}
 .album-description {
     animation-name: slideIn;
     animation-duration: 1s;
     text-align: right;
     justify-items: right;
     max-width: 500px;
-    min-width: 300px;
+    min-width: 200px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -68,7 +75,7 @@ h1 {
 }
 .modal {
     color: #ffffff;
-    margin: 15vh 15vw 5vh 15vw;
+    margin: 20vh 15vw 5vh 15vw;
 }
 a {
     color: #ffffff;
@@ -87,4 +94,16 @@ canvas {
 @keyframes slideIn	{
 	from { margin-left: -200px; opacity: 0;}
 	to { margin-left: 20px; opacity: 1; }
+}
+
+@media all and (max-width: 1024px) {
+    .album-description {
+        display: none;
+    }
+    .main {
+        margin: 2vw;
+    }
+    .modal {
+        margin: 10vh 5vw 5vh 5vw;
+    }
 }

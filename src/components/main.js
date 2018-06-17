@@ -49,7 +49,7 @@ class Main extends React.Component {
             )
         } else {
             return (
-                <FlexBox flexDirection="column" minWidth="682px" margin="10vw" maxWidth="100vw" className="main">
+                <FlexBox flexDirection="column" minWidth="682px" maxWidth="100vw" className="main">
                     <FlexBox element="header">
                         <img src={require('../images/moosefrog-logo.png')} alt="Moosefrog" className="logo"/>
                     </FlexBox>
